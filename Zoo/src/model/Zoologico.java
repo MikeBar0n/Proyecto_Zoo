@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package model;
 
 
 public class Zoologico {
@@ -10,7 +10,7 @@ public class Zoologico {
     private String nombre;
     private String ciudad;
     private String pais;
-    private double tamanio;
+    private double tamano;
     private double presupuesto;
 
     public String getNombre() {
@@ -37,12 +37,12 @@ public class Zoologico {
         this.pais = pais;
     }
 
-    public double getTamanio() {
-        return tamanio;
+    public double getTamano() {
+        return tamano;
     }
 
-    public void setTamanio(double tamanio) {
-        this.tamanio = tamanio;
+    public void setTamano(double tamano) {
+        this.tamano = tamano;
     }
 
     public double getPresupuesto() {
@@ -54,13 +54,30 @@ public class Zoologico {
     }
     
 
-    public Zoologico(String nombre, String ciudad, String pais, double tamanio, double presupuesto) {
+    public Zoologico(String nombre, String ciudad, String pais, double tamano, double presupuesto) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.pais = pais;
-        this.tamanio = tamanio;
+        this.tamano = tamano;
         this.presupuesto = presupuesto;
     }
     
+    public String toFileString() {
+        return nombre + ";" + ciudad + ";" + pais + ";" + tamano + ";" + presupuesto;
+    }
+
+    public static Zoologico fromFileString(String linea) {
+        String[] datos = linea.split(";");
+        return new Zoologico(
+            datos[0], datos[1], datos[2],
+            Double.parseDouble(datos[3]),
+            Double.parseDouble(datos[4])
+        );
+    }
     
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " | Ciudad: " + ciudad + " | País: " + pais +
+               " | Tamaño: " + tamano + "m² | Presupuesto: $" + presupuesto;
+    }
 }
