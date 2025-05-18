@@ -9,12 +9,12 @@ public class Especie {
     
     private String nombreVulgar;
     private String nombreCientifico;
-    private String  Familia;
+    private String familia;
 
-    public Especie(String nombreVulgar, String nombreCientifico, String Familia) {
+    public Especie(String nombreVulgar, String nombreCientifico, String familia) {
         this.nombreVulgar = nombreVulgar;
         this.nombreCientifico = nombreCientifico;
-        this.Familia = Familia;
+        this.familia = familia;
         
     }
 
@@ -35,11 +35,11 @@ public class Especie {
     }
 
     public String getFamilia() {
-        return Familia;
+        return familia;
     }
 
-    public void setFamilia(String Familia) {
-        this.Familia = Familia;
+    public void setFamilia(String familia) {
+        this.familia = familia;
     }
     
 }
