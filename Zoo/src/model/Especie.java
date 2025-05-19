@@ -5,7 +5,8 @@
 package model;
 
 
-public class Especie {
+public class Especie implements Comparable<Especie> {    
+   
     
     private String nombreVulgar;
     private String nombreCientifico;
@@ -40,6 +41,25 @@ public class Especie {
 
     public void setFamilia(String familia) {
         this.familia = familia;
+    }
+    
+    @Override
+    public String toString() {
+        return nombreCientifico + " (" + nombreVulgar + ") - Familia: " + familia;
+    }
+
+    public String toFileString() {
+        return nombreVulgar + ";" + nombreCientifico + ";" + familia;
+    }
+
+    public static Especie fromFileString(String linea) {
+        String[] datos = linea.split(";");
+        return new Especie(datos[0], datos[1], datos[2]);
+    }
+
+    @Override
+    public int compareTo(Especie otra) {
+        return this.nombreCientifico.compareToIgnoreCase(otra.nombreCientifico);
     }
     
 }
