@@ -16,63 +16,69 @@ public class Animal {
     private int anioNacimiento;
     private String paisOrigen;
     private String continente;
+    private String nombreZoologico;
 
-    public Animal(int id, Especie especie, String sexo, int anioNacimiento, String paisOrigen, String continente) {
+    public Animal(int id, Especie especie, String sexo, int anioNacimiento, String paisOrigen, String continente, String nombreZoologico) {
         this.id = id;
         this.especie = especie;
         this.sexo = sexo;
         this.anioNacimiento = anioNacimiento;
         this.paisOrigen = paisOrigen;
         this.continente = continente;
+        this.nombreZoologico = nombreZoologico;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public Especie getEspecie() {
         return especie;
-    }
-
-    public void setEspecie(Especie especie) {
-        this.especie = especie;
     }
 
     public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
     public int getAnioNacimiento() {
         return anioNacimiento;
-    }
-
-    public void setAnioNacimiento(int anioNacimiento) {
-        this.anioNacimiento = anioNacimiento;
     }
 
     public String getPaisOrigen() {
         return paisOrigen;
     }
 
-    public void setPaisOrigen(String paisOrigen) {
-        this.paisOrigen = paisOrigen;
-    }
-
     public String getContinente() {
         return continente;
     }
 
-    public void setContinente(String continente) {
-        this.continente = continente;
+    public String getNombreZoologico() {
+        return nombreZoologico;
     }
-    
+
+   public String toFileString() {
+        return id + ";" +
+               especie.getNombreVulgar() + ";" +
+               especie.getNombreCientifico() + ";" +
+               especie.getFamilia() + ";" +
+               sexo + ";" +
+               anioNacimiento + ";" +
+               paisOrigen + ";" +
+               continente + ";" +
+               nombreZoologico;
+    }
+   public static Animal fromFileString(String linea) {
+        String[] datos = linea.split(";");
+        Especie especie = new Especie(datos[1], datos[2], datos[3]);
+        return new Animal(
+            datos[0], especie, datos[4], Integer.parseInt(datos[5]),
+            datos[6], datos[7], datos[8]
+        );
+    }
+   @Override
+    public String toString() {
+        return id + " - " + especie.getNombreCientifico() +
+               " (" + sexo + ", " + anioNacimiento + ", " + paisOrigen + ")";
+    }
     
 }
