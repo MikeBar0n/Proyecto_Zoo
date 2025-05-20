@@ -10,7 +10,7 @@ package model;
  */
 public class Animal {
     
-    private int id;
+    private String id;
     private Especie especie;
     private String sexo;
     private int anioNacimiento;
@@ -18,7 +18,7 @@ public class Animal {
     private String continente;
     private String nombreZoologico;
 
-    public Animal(int id, Especie especie, String sexo, int anioNacimiento, String paisOrigen, String continente, String nombreZoologico) {
+    public Animal(String id, Especie especie, String sexo, int anioNacimiento, String paisOrigen, String continente, String nombreZoologico) {
         this.id = id;
         this.especie = especie;
         this.sexo = sexo;
@@ -28,7 +28,7 @@ public class Animal {
         this.nombreZoologico = nombreZoologico;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
