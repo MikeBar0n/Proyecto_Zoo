@@ -9,10 +9,12 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.util.*;
+
 /**
  *
  * @author Daniel
  */
+
 public class ZoologicoController {
     
     private ZoologicoVista vista;

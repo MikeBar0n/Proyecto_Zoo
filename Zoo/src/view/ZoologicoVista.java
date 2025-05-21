@@ -21,7 +21,7 @@ public class ZoologicoVista extends JFrame{
     
     public ZoologicoVista() {
         setTitle("Gestión de Zoológicos");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
         JPanel panelDatos = new JPanel(new GridLayout(6, 2));
