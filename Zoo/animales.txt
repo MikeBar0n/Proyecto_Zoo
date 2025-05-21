@@ -1,0 +1,2 @@
+A001;León;Panthera leo;Felidae;M;2015;Sudáfrica;África;Zoológico de Cali
+A002;Elefante africano;Loxodonta africana;Elephantidae;H;2012;Kenia;África;Bioparque Ukumarí
