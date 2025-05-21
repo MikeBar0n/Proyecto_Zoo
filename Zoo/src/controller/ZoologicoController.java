@@ -18,8 +18,11 @@ public class ZoologicoController {
     private ZoologicoVista vista;
     private HashMap<String, Zoologico> mapaZoologicos;
     
-    public ZoologicoController(ZoologicoVista vista) {
+    public ZoologicoController(ZoologicoVista vista, HashMap<String, Zoologico> mapaZoologicos) {
+        
         this.vista = vista;
+        this.mapaZoologicos = mapaZoologicos;
+        
         try {
             mapaZoologicos = ZoologicoDAO.cargarZoologicos();
         } catch (IOException e) {

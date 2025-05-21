@@ -19,9 +19,10 @@ public class EspecieController {
     private EspecieVista vista;
     private TreeSet<Especie> especies;
     
-    public EspecieController(EspecieVista vista) {
+    public EspecieController(EspecieVista vista, TreeSet<Especie> especies) {
         this.vista = vista;
-
+        this.especies = especies;
+        
         try {
             especies = EspecieDAO.cargarEspecies();
         } catch (IOException e) {
