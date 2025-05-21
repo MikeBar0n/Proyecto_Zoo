@@ -15,6 +15,7 @@ public class Main {
         new ZoologicoController(new ZoologicoVista());
         new EspecieController(new EspecieVista());
         new AnimalController(new AnimalVista(), especies, zoologicos);
+        new AnimalesPorZoologicoController(new VistaAnimalesPorZoologico(), zoologicos);
     }
 }
 
