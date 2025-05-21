@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.LinkedList;
+import java.util.List;
 
 public class Zoologico {
     
@@ -12,6 +14,7 @@ public class Zoologico {
     private String pais;
     private double tamano;
     private double presupuesto;
+    private List<Animal> animales = new LinkedList<>();
 
     public String getNombre() {
         return nombre;
@@ -53,7 +56,10 @@ public class Zoologico {
         this.presupuesto = presupuesto;
     }
     
-
+    public List<Animal> getAnimales() {
+        return animales;
+    }
+    
     public Zoologico(String nombre, String ciudad, String pais, double tamano, double presupuesto) {
         this.nombre = nombre;
         this.ciudad = ciudad;
@@ -80,4 +86,9 @@ public class Zoologico {
         return "Nombre: " + nombre + " | Ciudad: " + ciudad + " | País: " + pais +
                " | Tamaño: " + tamano + "m² | Presupuesto: $" + presupuesto;
     }
+    
+    public void agregarAnimal(Animal animal) {
+        animales.add(animal);
+    }
+    
 }
