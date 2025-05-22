@@ -1,15 +1,13 @@
 package main;
 
-import view.*;
-import controller.*;
-import model.*;
-import model.dao.*;
+import controller.LoginController;
+import view.LoginVista;
 
 
 public class Main {
     public static void main(String[] args) throws Exception {
         
-       new MenuController(new MenuPrincipal());
+       new LoginController(new LoginVista());
        
     }
 }
