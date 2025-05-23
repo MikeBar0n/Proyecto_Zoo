@@ -1,2 +1,3 @@
+A010;Oso de anteojos;Tremarctos ornatus;Ursidae;M;2015;Ecuador;América;Zoológico Jaime Duque 
 A001;León;Panthera leo;Felidae;M;2015;Sudáfrica;África;Zoológico de Cali
 A002;Elefante africano;Loxodonta africana;Elephantidae;H;2012;Kenia;África;Bioparque Ukumarí
